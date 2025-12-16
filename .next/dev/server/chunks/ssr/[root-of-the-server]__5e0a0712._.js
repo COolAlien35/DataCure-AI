@@ -4961,13 +4961,13 @@ const jobsApi = {
         const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$data$2d$cure$2d$ai$2d$dashboard$2f$lib$2f$api$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["apiClient"].get(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$data$2d$cure$2d$ai$2d$dashboard$2f$lib$2f$api$2f$endpoints$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ENDPOINTS"].JOB_RECORD_DETAIL(jobId, recordId));
         return data;
     },
-    // Create new validation job
-    async createJob (file) {
-        const formData = new FormData();
-        formData.append('file', file);
-        const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$data$2d$cure$2d$ai$2d$dashboard$2f$lib$2f$api$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["apiClient"].post(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$data$2d$cure$2d$ai$2d$dashboard$2f$lib$2f$api$2f$endpoints$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ENDPOINTS"].JOBS, formData, {
+    // Create new validation job (demo mode - filename only)
+    async createJob (filename) {
+        const { data } = await __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$data$2d$cure$2d$ai$2d$dashboard$2f$lib$2f$api$2f$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["apiClient"].post(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$data$2d$cure$2d$ai$2d$dashboard$2f$lib$2f$api$2f$endpoints$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ENDPOINTS"].JOBS, {
+            filename
+        }, {
             headers: {
-                'Content-Type': 'multipart/form-data'
+                'Content-Type': 'application/json'
             }
         });
         return data;
@@ -5070,7 +5070,7 @@ function useJobMetrics(jobId) {
 function useCreateJob() {
     const queryClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$data$2d$cure$2d$ai$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$QueryClientProvider$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useQueryClient"])();
     return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$data$2d$cure$2d$ai$2d$dashboard$2f$node_modules$2f40$tanstack$2f$react$2d$query$2f$build$2f$modern$2f$useMutation$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMutation"])({
-        mutationFn: (file)=>__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$data$2d$cure$2d$ai$2d$dashboard$2f$lib$2f$api$2f$services$2f$jobs$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jobsApi"].createJob(file),
+        mutationFn: (filename)=>__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$data$2d$cure$2d$ai$2d$dashboard$2f$lib$2f$api$2f$services$2f$jobs$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jobsApi"].createJob(filename),
         onSuccess: ()=>{
             // Invalidate jobs list to show new job
             queryClient.invalidateQueries({

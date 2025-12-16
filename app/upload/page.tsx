@@ -3,12 +3,15 @@
 import type React from "react"
 
 import { useState, useCallback } from "react"
+import { useRouter } from "next/navigation"
 import { AppShell } from "@/components/app-shell"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { ValidationPipeline } from "@/components/validation-pipeline"
-import { Upload, FileSpreadsheet, CheckCircle2, ArrowRight, Info } from "lucide-react"
+import { useToast } from "@/hooks/use-toast"
+import { useCreateJob } from "@/hooks/api/useJobs"
+import { Upload, FileSpreadsheet, CheckCircle2, ArrowRight, Info, Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const columnMappings = [
@@ -20,9 +23,12 @@ const columnMappings = [
 ]
 
 export default function UploadPage() {
+  const router = useRouter()
+  const { toast } = useToast()
+  const { mutate: createJob, isPending } = useCreateJob()
+
   const [isDragging, setIsDragging] = useState(false)
   const [uploadedFile, setUploadedFile] = useState<string | null>(null)
-  const [isUploaded, setIsUploaded] = useState(false)
 
   const handleDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault()
@@ -51,7 +57,27 @@ export default function UploadPage() {
   }, [])
 
   const handleUpload = () => {
-    setIsUploaded(true)
+    if (!uploadedFile) return
+
+    createJob(uploadedFile, {
+      onSuccess: () => {
+        toast({
+          title: "Validation job started",
+          description: "Your file is being processed. Redirecting to jobs list...",
+        })
+        // Redirect after toast shows
+        setTimeout(() => {
+          router.push("/jobs")
+        }, 1000)
+      },
+      onError: (error) => {
+        toast({
+          title: "Upload failed",
+          description: error instanceof Error ? error.message : "Failed to create job",
+          variant: "destructive",
+        })
+      },
+    })
   }
 
   return (
@@ -65,18 +91,7 @@ export default function UploadPage() {
           </p>
         </div>
 
-        {isUploaded && (
-          <Alert className="bg-success/10 border-success/30">
-            <CheckCircle2 className="h-4 w-4 text-success" />
-            <AlertTitle className="text-success">Validation Started</AlertTitle>
-            <AlertDescription className="text-success/80">
-              Your file has been uploaded and AI validation agents are now processing your data. You can track progress
-              in the Validation Jobs page.
-            </AlertDescription>
-          </Alert>
-        )}
-
-        {uploadedFile && !isUploaded && (
+        {uploadedFile && (
           <Card className="bg-primary/5 border-primary/20">
             <CardContent className="py-4">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -131,6 +146,7 @@ export default function UploadPage() {
                 accept=".csv"
                 onChange={handleFileSelect}
                 className="absolute inset-0 cursor-pointer opacity-0"
+                disabled={isPending}
               />
               {uploadedFile ? (
                 <>
@@ -147,8 +163,15 @@ export default function UploadPage() {
               )}
             </div>
 
-            <Button onClick={handleUpload} disabled={!uploadedFile || isUploaded} className="w-full">
-              {isUploaded ? "Validation In Progress" : "Upload & Start AI Validation"}
+            <Button onClick={handleUpload} disabled={!uploadedFile || isPending} className="w-full">
+              {isPending ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Starting Validation...
+                </>
+              ) : (
+                "Upload & Start AI Validation"
+              )}
             </Button>
           </CardContent>
         </Card>

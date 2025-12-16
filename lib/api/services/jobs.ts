@@ -63,17 +63,14 @@ export const jobsApi = {
         return data
     },
 
-    // Create new validation job
-    async createJob(file: File): Promise<ValidationJob> {
-        const formData = new FormData()
-        formData.append('file', file)
-
+    // Create new validation job (demo mode - filename only)
+    async createJob(filename: string): Promise<ValidationJob> {
         const { data } = await apiClient.post<ValidationJob>(
             ENDPOINTS.JOBS,
-            formData,
+            { filename },
             {
                 headers: {
-                    'Content-Type': 'multipart/form-data',
+                    'Content-Type': 'application/json',
                 },
             }
         )
