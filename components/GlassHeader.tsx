@@ -2,15 +2,12 @@
 
 import { useRef, useEffect } from "react"
 import gsap from "gsap"
-import { Menu, User, Zap } from "lucide-react"
+import { Menu, User } from "lucide-react"
 import { useSidebar } from "@/lib/contexts/SidebarContext"
 
 export function GlassHeader() {
     const headerRef = useRef<HTMLElement>(null)
     const { toggleSidebar } = useSidebar()
-
-    // Check if running in demo mode (simulated data)
-    const isDemoMode = process.env.NEXT_PUBLIC_DEMO_MODE !== 'false'
 
     useEffect(() => {
         if (!headerRef.current) return
@@ -52,9 +49,6 @@ export function GlassHeader() {
                             >
                                 DataCure AI
                             </span>
-                            <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-medium hidden sm:inline">
-                                v2.0
-                            </span>
                         </div>
                         <span className="text-[10px] text-gray-500 hidden sm:inline">
                             Healthcare Provider Validation Platform
@@ -62,27 +56,8 @@ export function GlassHeader() {
                     </div>
                 </div>
 
-                {/* Right - Status HUD */}
+                {/* Right - Profile */}
                 <div className="flex items-center gap-3">
-                    {/* Demo/Live Badge */}
-                    {isDemoMode ? (
-                        <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">
-                            <Zap className="w-3 h-3 text-amber-400" />
-                            <span className="text-xs font-medium text-amber-400 hidden sm:inline">
-                                Demo Mode
-                            </span>
-                        </div>
-                    ) : (
-                        <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20">
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                            </span>
-                            <span className="text-xs font-medium text-emerald-400 hidden sm:inline">
-                                Live
-                            </span>
-                        </div>
-                    )}
 
                     {/* Profile Avatar */}
                     <button className="relative p-0.5 rounded-full bg-gradient-to-r from-emerald-500 via-cyan-500 to-emerald-500 bg-[length:200%_auto] hover:animate-gradient group">

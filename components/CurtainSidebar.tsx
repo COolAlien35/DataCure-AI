@@ -80,7 +80,7 @@ export function CurtainSidebar() {
                 {/* Brand */}
                 <div className="px-6 py-8 text-center border-t border-white/10">
                     <p className="text-sm font-semibold text-foreground">DataCure AI</p>
-                    <p className="text-xs text-muted-foreground/70">v2.0 Command Center</p>
+                    <p className="text-xs text-muted-foreground/70"> Command Center</p>
                 </div>
             </div>
         </>

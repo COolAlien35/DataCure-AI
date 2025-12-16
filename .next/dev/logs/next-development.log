@@ -1867,3 +1867,16 @@ Import traces:
 [01:19:17.919] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/settings color: rgb(120, 120, 120) color: inherit {"dp":"/settings","o":"http://localhost:3000/settings","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765893885580}
 [01:19:23.342] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765893891012}
 [01:20:12.132] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/jobs color: rgb(120, 120, 120) color: inherit {"dp":"/jobs","o":"http://localhost:3000/jobs","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765893939799}
+[01:24:27.207] Server  LOG      ✓ Compiled in 684ms
+[01:24:31.706] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:24:31.917] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:24:31.917] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/jobs","route":"/jobs"}
+[01:24:31.917] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/jobs color: rgb(120, 120, 120) color: inherit {"dp":"/jobs","o":"http://localhost:3000/jobs","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765894199591}
+[01:24:42.479] Server  LOG      ✓ Compiled in 570ms
+[01:24:46.673] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:24:46.839] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[01:24:46.839] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/jobs","route":"/jobs"}
+[01:24:46.839] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/jobs color: rgb(120, 120, 120) color: inherit {"dp":"/jobs","o":"http://localhost:3000/jobs","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765894214512}
+[01:24:56.692] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/analytics color: rgb(120, 120, 120) color: inherit {"dp":"/analytics","o":"http://localhost:3000/analytics","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765894224321}
+[01:25:00.517] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765894227872}
+[01:25:35.834] Server  LOG      ✓ Compiled in 141ms
