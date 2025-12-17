@@ -52,7 +52,7 @@ export function Footer() {
                     {/* Right - Links */}
                     <div className="flex items-center gap-3">
                         <a
-                            href="https://github.com"
+                            href="https://github.com/COolAlien35/DataCure-AI"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-emerald-500/50 transition-all group"

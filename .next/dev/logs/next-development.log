@@ -1,1 +1,26 @@
-[00:00:00.776] Server  LOG      ✓ Ready in 533ms
+[00:00:00.825] Server  LOG      ✓ Ready in 572ms
+[00:01:46.469] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:46.724] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:01:46.724] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:01:46.724] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765978998001}
+[00:01:46.724] Browser WARN    GSAP target .jobs-row not found. https://gsap.com
+[00:01:46.724] Browser WARN    GSAP target .jobs-row not found. https://gsap.com
+[00:01:50.211] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/jobs color: rgb(120, 120, 120) color: inherit {"dp":"/jobs","o":"http://localhost:3000/jobs","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765979001502}
+[00:01:54.723] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/upload color: rgb(120, 120, 120) color: inherit {"dp":"/upload","o":"http://localhost:3000/upload","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765979006029}
+[00:02:00.201] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/jobs color: rgb(120, 120, 120) color: inherit {"dp":"/jobs","o":"http://localhost:3000/jobs","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765979011504}
+[00:02:16.822] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/jobs/199c773a color: rgb(120, 120, 120) color: inherit {"dp":"/jobs/[id]","o":"http://localhost:3000/jobs/199c773a","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765979028128}
+[00:02:18.796] Browser WARN    WebSocket connection failed for job 199c773a. Backend may be unavailable.
+[00:02:18.796] Browser LOG     WebSocket closed
+[00:02:18.796] Browser LOG     WebSocket connected for job 199c773a
+[00:02:18.796] Browser LOG     Reconnecting... (attempt 1)
+[00:02:20.591] Browser LOG     WebSocket connected for job 199c773a
+[00:03:34.868] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/jobs color: rgb(120, 120, 120) color: inherit {"dp":"/jobs","o":"http://localhost:3000/jobs","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765979106159}
+[00:03:34.868] Browser LOG     WebSocket closed
+[00:03:35.873] Browser LOG     Reconnecting... (attempt 1)
+[00:03:35.873] Browser LOG     WebSocket connected for job 199c773a
+[00:03:38.428] Browser WARN    GSAP target .jobs-row not found. https://gsap.com
+[00:03:38.428] Browser WARN    GSAP target .jobs-row not found. https://gsap.com
+[00:03:38.428] Browser WARN    GSAP target .jobs-row not found. https://gsap.com
+[00:03:38.428] Browser WARN    GSAP target .jobs-row not found. https://gsap.com
+[00:03:38.428] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765979109726}
+[00:08:42.221] Server  LOG      ✓ Compiled in 159ms
