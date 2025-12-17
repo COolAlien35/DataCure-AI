@@ -50,8 +50,10 @@ export class WebSocketManager {
             }
         }
 
-        this.ws.onerror = (error) => {
-            console.error('WebSocket error:', error)
+        this.ws.onerror = () => {
+            // Note: Browser WebSocket error events don't expose error details for security reasons
+            // This typically occurs when the server is unreachable or rejects the connection
+            console.warn(`WebSocket connection failed for job ${this.jobId}. Backend may be unavailable.`)
         }
 
         this.ws.onclose = () => {
